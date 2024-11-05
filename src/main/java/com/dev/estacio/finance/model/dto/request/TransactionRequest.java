@@ -2,6 +2,7 @@ package com.dev.estacio.finance.model.dto.request;
 
 import com.dev.estacio.finance.model.enums.AccountType;
 import com.dev.estacio.finance.model.enums.Category;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
@@ -15,6 +16,7 @@ public record TransactionRequest(
         String description,
 
         @JsonProperty("data")
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
         LocalDate date,
 
         @JsonProperty("valor")
