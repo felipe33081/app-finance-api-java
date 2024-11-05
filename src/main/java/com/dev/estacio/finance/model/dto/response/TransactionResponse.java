@@ -19,7 +19,7 @@ public record TransactionResponse(
         String description,
 
         @JsonProperty("data")
-        @JsonFormat(shape = STRING, pattern = "dd/MM/yyyy")
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
         LocalDate date,
 
         @JsonProperty("valor")
