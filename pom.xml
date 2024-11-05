@@ -21,6 +21,7 @@
         <jackson-datatype-version>2.14.0</jackson-datatype-version>
         <jackson-annotations-version>2.17.1</jackson-annotations-version>
         <vavr-version>0.10.4</vavr-version>
+        <start-class>com.dev.estacio.finance</start-class>
     </properties>
 
     <dependencies>
@@ -102,6 +103,15 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.dev.estacio.finance</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
