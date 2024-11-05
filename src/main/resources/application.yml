@@ -10,15 +10,16 @@ spring:
 
   # DATABASE
   datasource:
-    url: jdbc:postgresql://junction.proxy.rlwy.net:45731/railway
-    username: postgres
-    password: EgzfXkYxzsOOgwxsDdNUDwbWDWPPGZqz
+    url: ${POSTGRES_URL:jdbc:postgresql://junction.proxy.rlwy.net:45731/railway}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:EgzfXkYxzsOOgwxsDdNUDwbWDWPPGZqz}
     driver-class-name: org.postgresql.Driver
 
   # JPA
   jpa:
     hibernate:
       ddl-auto: none
+    database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   # JACKSON
