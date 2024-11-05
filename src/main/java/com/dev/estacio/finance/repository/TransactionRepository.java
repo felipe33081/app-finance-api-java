@@ -22,4 +22,7 @@ public interface TransactionRepository extends CrudRepository<Transaction, Long>
     List<Transaction> findTransactionsByUserIdAndMonth(@Param("userId") Long userId,
                                                        @Param("mes") Integer mes,
                                                        @Param("ano") Integer ano);
+
+    @Query("SELECT t FROM Transaction t WHERE t.user.id = :userId AND MONTH(t.date) = :mes AND YEAR(t.date) = :ano")
+    List<Transaction> findTransactionByUserIdAndMonthAndYear(@Param("userId") Long userId, @Param("mes") Integer mes, @Param("ano") Integer ano);
 }

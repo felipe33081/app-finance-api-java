@@ -28,8 +28,12 @@ public class TransactionController {
     }
 
     @GetMapping("/usuario/{userId}")
-    public ResponseEntity<List<TransactionResponse>> findTransactionsByUserId(@PathVariable("userId") Long userId) {
-        return ok(service.findTransactionsByUserId(userId));
+    public ResponseEntity<List<TransactionResponse>> findTransactionsByUserId(
+            @PathVariable("userId") Long userId,
+            @RequestParam(value = "mes", required = false) Integer mes,
+            @RequestParam(value = "ano", required = false) Integer ano) {
+
+        return ok(service.findTransactionsByUserId(userId, mes, ano));
     }
 
     @GetMapping("/usuario/{userId}/saldo")

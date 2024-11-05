@@ -35,8 +35,14 @@ public class TransactionService {
         return TransactionMapper.instance.toResponse(repository.save(transaction));
     }
 
-    public List<TransactionResponse> findTransactionsByUserId(Long userId) {
-        return TransactionMapper.instance.toResponseList(repository.findTransactionByUserId(userId));
+    public List<TransactionResponse> findTransactionsByUserId(Long userId, Integer mes, Integer ano) {
+        List<Transaction> transactions;
+        if (mes != null && ano != null) {
+            transactions = repository.findTransactionByUserIdAndMonthAndYear(userId, mes, ano);
+        } else {
+            transactions = repository.findTransactionByUserId(userId);
+        }
+        return TransactionMapper.instance.toResponseList(transactions);
     }
 
     @Transactional
