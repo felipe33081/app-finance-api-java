@@ -10,9 +10,9 @@ spring:
 
   # DATABASE
   datasource:
-    url: ${POSTGRES_URL}
-    username: ${POSTGRES_USER}
-    password: ${POSTGRES_PASSWORD}
+    url: jdbc:postgresql://junction.proxy.rlwy.net:45731/railway
+    username: postgres
+    password: EgzfXkYxzsOOgwxsDdNUDwbWDWPPGZqz
     driver-class-name: org.postgresql.Driver
 
   # JPA
