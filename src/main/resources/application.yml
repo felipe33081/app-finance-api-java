@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /financas/api
+
+### Spring settings
+spring:
+  application:
+    name: finances
+
+  # DATABASE
+  datasource:
+    url: jdbc:postgresql://junction.proxy.rlwy.net:45731/railway
+    username: postgres
+    password: EgzfXkYxzsOOgwxsDdNUDwbWDWPPGZqz
+    driver-class-name: org.postgresql.Driver
+
+  # JPA
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  # JACKSON
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+
+#  security:
+#    jwt:
+#      secret: ${SECURITY_JWT_SECRET:Frrlo0VY6KWhn3MMYVUpTQEwY7KF8a2a}
+#      expiration: ${SECURITY_JWT_EXPIRATION:3600}
