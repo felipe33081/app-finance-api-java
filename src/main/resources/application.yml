@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  #port: 8080
   servlet:
     context-path: /financas/api
 
@@ -10,9 +10,10 @@ spring:
 
   # DATABASE
   datasource:
-    url: jdbc:postgresql://junction.proxy.rlwy.net:45731/railway
-    username: postgres
-    password: EgzfXkYxzsOOgwxsDdNUDwbWDWPPGZqz
+    #url: jdbc:postgresql://junction.proxy.rlwy.net:45731/railway
+    url: ${DATABASE_URL}
+    #username: postgres
+    #password: EgzfXkYxzsOOgwxsDdNUDwbWDWPPGZqz
     driver-class-name: org.postgresql.Driver
 
   # JPA
